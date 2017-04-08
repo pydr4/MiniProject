@@ -1,0 +1,101 @@
+﻿<ConfigurationSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Database>
+    <DataSources>
+      <DataSource>
+        <ID>COMP3065 Production DM</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=DESKTOP-Q2V8SA7;Integrated Security=SSPI;Initial Catalog=COMP3065_ProductionDM</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Misato</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+      <DataSource>
+        <ID>COMP3065 Sales DM</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=DESKTOP-Q2V8SA7;Integrated Security=SSPI;Initial Catalog=COMP3065_SalesDM</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Misato</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+      <DataSource>
+        <ID>COMP3065 Sales DM 1</ID>
+        <ConnectionString>Provider=SQLNCLI11.1;Data Source=DESKTOP-Q2V8SA7;Integrated Security=SSPI;Initial Catalog=COMP3065_SalesDM</ConnectionString>
+        <ImpersonationInfo>
+          <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">ImpersonateAccount</ImpersonationMode>
+          <Account xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Misato</Account>
+          <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">PasswordRemoved</ImpersonationInfoSecurity>
+        </ImpersonationInfo>
+      </DataSource>
+    </DataSources>
+    <Dimensions>
+      <Dimension>
+        <ID>DIM Products</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Time</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM Customer</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM Reason</ID>
+      </Dimension>
+      <Dimension>
+        <ID>DIM Location</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Dim Products 1</ID>
+      </Dimension>
+      <Dimension>
+        <ID>Time 1</ID>
+      </Dimension>
+    </Dimensions>
+    <Cubes>
+      <Cube>
+        <ID>COMP3065 Production DM</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Work Order Fact</ID>
+            <Partitions>
+              <Partition>
+                <ID>Work Order Fact</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>COMP3065 Sales DM</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Online Sales Fact</ID>
+            <Partitions>
+              <Partition>
+                <ID>Online Sales Fact</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+      <Cube>
+        <ID>COMP3065 Sales DM 1</ID>
+        <MeasureGroups>
+          <MeasureGroup>
+            <ID>Local Sales Fact</ID>
+            <Partitions>
+              <Partition>
+                <ID>Local Sales Fact</ID>
+              </Partition>
+            </Partitions>
+          </MeasureGroup>
+        </MeasureGroups>
+      </Cube>
+    </Cubes>
+    <DataSourceImpersonationInfo>
+      <ImpersonationMode xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Default</ImpersonationMode>
+      <ImpersonationInfoSecurity xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">Unchanged</ImpersonationInfoSecurity>
+    </DataSourceImpersonationInfo>
+  </Database>
+</ConfigurationSettings>

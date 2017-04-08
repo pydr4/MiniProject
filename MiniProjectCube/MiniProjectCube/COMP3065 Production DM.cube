@@ -1,0 +1,198 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="ee1cc2fb-0a2d-4ede-8a91-d0b996656e9c" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>COMP3065 Production DM</ID>
+  <Name>COMP3065 Production DM</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="a2e5c158-8cec-4923-90cf-ef8ad2b57e12">
+      <ID>DIM Products</ID>
+      <Name>DIM Products</Name>
+      <DimensionID>DIM Products</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="b3f88058-8561-4a1b-b577-2f0d81f3db10">
+          <AttributeID>Product Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b50d0c70-cb00-4c5c-8bea-8e508a5793cc">
+          <AttributeID>Produt Name</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="d59c6e3f-7ef4-4c98-9a00-688accb49ad2">
+      <ID>Time</ID>
+      <Name>Time</Name>
+      <DimensionID>Time</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="5cd7dfcb-220a-4065-8429-d34346f9cd2b">
+          <AttributeID>Date</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ff8911b1-fd24-4700-9b5b-9f1be2ae8093">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="16d87510-62d3-4517-b7d8-2875c268b92e">
+          <AttributeID>Quarter</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="7f30a412-7b6c-41a3-9b71-4dad1cca0bb2">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="bcd56d42-3796-4bcb-8d78-8aca12884ea2">
+          <AttributeID>Quarter Of Year</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="5373d057-b946-466d-b06e-a5652d2f3efd">
+          <HierarchyID>Year -  Quarter -  Month -  Date</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="cb4133f7-e78e-42d1-b2da-d9bdafa68c57">
+      <ID>Work Order Fact</ID>
+      <Name>Work Order Fact</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="667a3989-1e05-4ac7-9bd1-bfcaa3f64317">
+          <ID>Stocked Qty</ID>
+          <Name>Stocked Qty</Name>
+          <Source dwd:design-time-name="9d322638-0070-426e-8b27-227faf6aac9f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e75de116-022f-47af-9b40-f47f344791a7">
+              <TableID>dbo_WorkOrder_Fact</TableID>
+              <ColumnID>StockedQty</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="115a0cba-a3ca-4f6b-8fcb-06012a44bec7">
+          <ID>Scrapped Qty</ID>
+          <Name>Scrapped Qty</Name>
+          <Source dwd:design-time-name="88969dcf-56df-48b9-83a5-96f6c6760437">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="20553c0c-fcf6-43a7-8073-79dd3b0d0352">
+              <TableID>dbo_WorkOrder_Fact</TableID>
+              <ColumnID>ScrappedQty</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c5d11f06-5877-4891-9a14-2ee147115fce">
+          <ID>On Time Flag</ID>
+          <Name>On Time Flag</Name>
+          <Source dwd:design-time-name="da7f65c6-4f41-4f9d-b8df-5df1fbee0f1c">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="01928fba-6713-4f5b-9316-442210c54675">
+              <TableID>dbo_WorkOrder_Fact</TableID>
+              <ColumnID>OnTimeFlag</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4c16c24f-0ee2-4d8a-a962-b385d4a5b7f6">
+          <ID>Duration</ID>
+          <Name>Duration</Name>
+          <Source dwd:design-time-name="53a45ed7-4857-443c-baea-0ca66f2dbac5">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1e862815-06fd-4aaa-abe5-43e4dd6842b5">
+              <TableID>dbo_WorkOrder_Fact</TableID>
+              <ColumnID>Duration</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2fce57bd-3316-463c-a168-825b996c5215">
+          <ID>Requested Amount</ID>
+          <Name>Requested Amount</Name>
+          <Source dwd:design-time-name="8029fe9d-f59b-46c1-a9b9-e76a33b5a93f">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="33856b16-49cd-4b57-92d1-4e516899c30f">
+              <TableID>dbo_WorkOrder_Fact</TableID>
+              <ColumnID>RequestedAmount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="99b9ff42-cda5-4bb3-8d23-f3f5c8d0ed0a">
+          <CubeDimensionID>DIM Products</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="4d2ddc7d-dcfb-4823-9c89-5a98e150e924">
+              <AttributeID>Product Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="38f408db-724a-421c-b1bd-79fe75661aba">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ea6a6907-6557-4d6b-81f9-3e5fcde55cf5">
+                    <TableID>dbo_WorkOrder_Fact</TableID>
+                    <ColumnID>ProductId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="78865f8c-39b4-4949-af49-9572b9219024">
+          <CubeDimensionID>Time</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="f0ae51cf-28e5-43de-9693-fea88565ee8f">
+              <AttributeID>Date</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b41f5e4d-c4d7-4899-b6f6-093aa851491c">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="14182cf1-ff9a-4c58-bf2a-9339accc13d6">
+                    <TableID>dbo_WorkOrder_Fact</TableID>
+                    <ColumnID>WorkEndTime</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="afe2d4bb-9aa0-4678-a767-6d313561f556">
+    <DataSourceViewID>COMP3065 Production DM</DataSourceViewID>
+  </Source>
+</Cube>

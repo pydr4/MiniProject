@@ -1,0 +1,145 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>MiniProjectCube</Database>
+    <Server>localhost</Server>
+    <ConnectionString>DataSource=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>x0KmkrkV9bMlN+CoEcB75dGW78A=2017/04/05 19:53:322017/04/02 20:07:17</TimeStamp>
+        <ID>
+          <String>COMP3065 Production DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>+rvKO7J6g7KAlkaqOaSP/gWDwG4=2017/04/08 13:56:302017/04/08 13:56:30</TimeStamp>
+        <ID>
+          <String>COMP3065 Sales DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>yt7x11TJB2mTvAFF4mq6UgnerqA=2017/04/08 15:00:372017/04/08 15:00:37</TimeStamp>
+        <ID>
+          <String>COMP3065 Sales DM 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>j47qskTiGJTSdjTorbn9PdSAwmM=2017/04/08 14:02:112017/04/02 20:07:38</TimeStamp>
+        <ID>
+          <String>COMP3065 Production DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>URMKpKf2NCw3ggsBwozJfVOwd7U=2017/04/08 13:58:472017/04/08 13:58:47</TimeStamp>
+        <ID>
+          <String>COMP3065 Sales DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>ewJC3WS3NLszAASlDOCBUNTItwY=2017/04/08 15:03:362017/04/08 15:01:02</TimeStamp>
+        <ID>
+          <String>COMP3065 Sales DM 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>PM4dIKxcBVJsOND62X9IG6mn1Iw=2017/04/02 20:09:222017/04/02 20:09:07</TimeStamp>
+        <ID>
+          <String>DIM Products</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>cc7+WVbdEy9esnQNYp9RwdwO0dY=2017/04/05 19:55:582017/04/02 20:16:51</TimeStamp>
+        <ID>
+          <String>Time</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5BIYLotTbo6bT8r48B9h59lJv24=2017/04/08 14:01:222017/04/08 14:00:49</TimeStamp>
+        <ID>
+          <String>DIM Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>UBGTgfgQAXsmhceVuQ38lZfjtOA=2017/04/08 14:01:352017/04/08 14:00:49</TimeStamp>
+        <ID>
+          <String>DIM Reason</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>De7JsMBmf0Dtm86JERjPPpgHdx4=2017/04/08 15:05:312017/04/08 15:03:36</TimeStamp>
+        <ID>
+          <String>DIM Location</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>xSCbNiiu5NWHW8uEzuhLiXnkTw4=2017/04/08 15:06:222017/04/08 15:03:36</TimeStamp>
+        <ID>
+          <String>Dim Products 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>afiMyI4/LF9a7YZmCWC16e8rzyI=2017/04/08 15:11:372017/04/08 15:03:36</TimeStamp>
+        <ID>
+          <String>Time 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>2fDaGFXuImfmmIrWZ5MSziYVnRU=2017/04/05 20:02:072017/04/05 20:02:07/s2xg1iNErigIQA8be1v0T1uC1M=2017/04/05 20:02:072017/04/05 20:02:07</TimeStamp>
+        <ID>
+          <String>COMP3065 Production DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>NpTtfPVxAVMtXZgtFhp87SHuVXs=2017/04/08 15:33:212017/04/08 14:00:49PV7JF3q+UafQk95/WE5+yumi/Xs=2017/04/08 14:00:492017/04/08 14:00:49</TimeStamp>
+        <ID>
+          <String>COMP3065 Sales DM</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>F6tGB9Mu5R4nq25CaqvrDlpbHtY=2017/04/08 15:33:122017/04/08 15:03:36uiRBDEVohHVDEwQAz0Sqjbai6hk=2017/04/08 15:03:362017/04/08 15:03:36</TimeStamp>
+        <ID>
+          <String>COMP3065 Sales DM 1</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>F8SFfxt1jneQdsk8z8kUTm7aARo=2017/04/02 20:20:582017/04/02 20:07:01</TimeStamp>
+      <ID>
+        <String>MiniProjectCube</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2017-04-08T19:33:24.283333Z</LastDeployed>
+</DeploymentSnapshot>

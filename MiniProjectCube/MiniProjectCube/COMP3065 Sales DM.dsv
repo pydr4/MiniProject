@@ -1,0 +1,125 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7bc5b097-c646-442e-8208-5f5008cc45f6" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>COMP3065 Sales DM</ID>
+  <Name>COMP3065 Sales DM</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>COMP3065 Sales DM</DataSourceID>
+  <Schema>
+    <xs:schema id="COMP3065_x0020_Sales_x0020_DM" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="COMP3065_x0020_Sales_x0020_DM" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="2316da8f-061f-4e02-8d10-725762d547b3">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DIMCustomer" msprop:design-time-name="266688dd-c71f-4445-b71f-15bb0e397de5" msprop:DbTableName="DIMCustomer" msprop:FriendlyName="DIMCustomer" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CustomerID" msprop:design-time-name="2b62c582-9287-4be8-8c81-374d9c09832a" msprop:DbColumnName="CustomerID" msprop:FriendlyName="CustomerID" type="xs:int" />
+                  <xs:element name="FirstName" msprop:design-time-name="68e3db95-6031-4180-bfae-91e8fe972a5c" msprop:DbColumnName="FirstName" msprop:FriendlyName="FirstName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="LastName" msprop:design-time-name="5152f645-da9c-4910-af56-612ae7c71c8f" msprop:DbColumnName="LastName" msprop:FriendlyName="LastName" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DIMReason" msprop:design-time-name="53d75cb8-d9e7-4429-92f5-891bd34ab989" msprop:DbTableName="DIMReason" msprop:FriendlyName="DIMReason" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ReasonID" msprop:design-time-name="9f69f91c-dc65-428a-940b-1a5e15002159" msprop:DbColumnName="ReasonID" msprop:FriendlyName="ReasonID" type="xs:int" />
+                  <xs:element name="Name" msprop:design-time-name="42d4a588-02a8-4bfc-92d3-bb802fae7d7a" msprop:DbColumnName="Name" msprop:FriendlyName="Name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="ReasonType" msprop:design-time-name="ab704517-daba-43fd-83db-fbe8f4ddb07c" msprop:DbColumnName="ReasonType" msprop:FriendlyName="ReasonType">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="50" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_OnlineSalesFact" msprop:design-time-name="f316205e-c2ed-45cb-9dcf-a2655380dede" msprop:DbTableName="OnlineSalesFact" msprop:FriendlyName="OnlineSalesFact" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="CustomerId" msprop:design-time-name="2d0cde6d-78a7-4064-88d1-a07f2f6aab5f" msprop:DbColumnName="CustomerId" msprop:FriendlyName="CustomerId" type="xs:int" />
+                  <xs:element name="ReasonId" msprop:design-time-name="70290d98-5b1e-4d1d-a267-cf2a3b065c66" msprop:DbColumnName="ReasonId" msprop:FriendlyName="ReasonId" type="xs:int" />
+                  <xs:element name="TotalSales" msprop:design-time-name="f6513005-4f96-452e-b984-2ccc0fbcc132" msprop:DbColumnName="TotalSales" msprop:FriendlyName="TotalSales" type="xs:decimal" />
+                  <xs:element name="TotalTax" msprop:design-time-name="2a9eecd9-ea66-4b69-98a3-8ebc7f9d7c85" msprop:DbColumnName="TotalTax" msprop:FriendlyName="TotalTax" type="xs:decimal" />
+                  <xs:element name="TotalFreight" msprop:design-time-name="43bfac96-7fe6-4de6-8090-df7b31bdcbd4" msprop:DbColumnName="TotalFreight" msprop:FriendlyName="TotalFreight" type="xs:decimal" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DIMCustomer" />
+          <xs:field xpath="CustomerID" />
+        </xs:unique>
+        <xs:unique name="dbo_DIMReason_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DIMReason" />
+          <xs:field xpath="ReasonID" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="OnlineSalesFact-DIMCustomer" msdata:parent="dbo_DIMCustomer" msdata:child="dbo_OnlineSalesFact" msdata:parentkey="CustomerID" msdata:childkey="CustomerId" />
+          <msdata:Relationship name="OnlineSalesFact-DIMReason" msdata:parent="dbo_DIMReason" msdata:child="dbo_OnlineSalesFact" msdata:parentkey="ReasonID" msdata:childkey="ReasonId" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <COMP3065_x0020_Sales_x0020_DM xmlns="" />
+  </Schema>
+</DataSourceView>

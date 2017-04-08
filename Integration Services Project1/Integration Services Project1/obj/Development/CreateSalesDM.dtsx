@@ -1,0 +1,2963 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="DESKTOP-Q2V8SA7\Misato"
+  DTS:CreatorComputerName="DESKTOP-Q2V8SA7"
+  DTS:CreationDate="4/7/2017 4:36:54 PM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{93AC3DFA-1F74-41A4-9D41-72382762C7DA}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1041"
+  DTS:ObjectName="CreateSalesDM"
+  DTS:DTSID="{4A536973-EDAD-4CB5-ADB1-DBBCDA4BFBEB}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]"
+      DTS:ObjectName="DESKTOP-Q2V8SA7.COMP3065"
+      DTS:DTSID="{F7CAA6D3-AF19-4DB4-9120-CCBC335D93E4}"
+      DTS:CreationName="OLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-Q2V8SA7;Initial Catalog=COMP3065;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]"
+      DTS:ObjectName="DESKTOP-Q2V8SA7.COMP3065_SalesDM"
+      DTS:DTSID="{097720D6-BE12-469D-A234-750074D560B9}"
+      DTS:CreationName="OLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-Q2V8SA7;Initial Catalog=COMP3065_SalesDM;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create Local Sales Data"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Local Sales Data"
+      DTS:DTSID="{CB9F50C1-F7E5-440E-845F-F965A15E526B}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Create Local Sales Data\DIMLocation"
+              name="DIMLocation"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[DIMLocation]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Local Sales Data\DIMLocation.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].Columns[Name]"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[Name]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      cachedName="Name"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].Columns[Group]"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[Group]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].ExternalColumns[Group]"
+                      cachedName="Group"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      cachedName="TerritoryID"
+                      cachedDataType="i4" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      name="LocationID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      name="Name"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input].ExternalColumns[Group]"
+                      name="Group"
+                      dataType="wstr"
+                      length="50" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Create Local Sales Data\DIMLocation.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\DIMLocation.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Local Sales Data\DIMLocation.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\DIMLocation.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Local Sales Data\DIMLocation.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Local Sales Data\DIMProducts"
+              name="DIMProducts"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[DimProducts]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Local Sales Data\DIMProducts.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      cachedName="ProductID"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].Columns[ProductNumber]"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductNumber]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].ExternalColumns[ProductNumber]"
+                      cachedName="ProductNumber"
+                      cachedDataType="wstr"
+                      cachedLength="25" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].Columns[Name]"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Name]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      cachedName="Name"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      name="ProductID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      name="ProductName"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input].ExternalColumns[ProductNumber]"
+                      name="ProductNumber"
+                      dataType="wstr"
+                      length="50" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Create Local Sales Data\DIMProducts.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\DIMProducts.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Local Sales Data\DIMProducts.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\DIMProducts.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Local Sales Data\DIMProducts.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Local Sales Data\Local Sale Fact"
+              name="Local Sale Fact"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[LocalSalesFact]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Local Sales Data\Local Sale Fact.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].Columns[OrderDate]"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                      cachedName="OrderDate"
+                      cachedDataType="dbTimeStamp" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      cachedName="ProductID"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].Columns[OrderQty]"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[OrderQty]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[ProductQty]"
+                      cachedName="OrderQty"
+                      cachedDataType="i2" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].Columns[TerritoryID]"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      cachedName="TerritoryID"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].Columns[SubTotal]"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[SubTotal]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[TotalSale]"
+                      cachedName="SubTotal"
+                      cachedDataType="cy" />
+                    <inputColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].Columns[TaxAmt]"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[TotalTax]"
+                      cachedName="TaxAmt"
+                      cachedDataType="cy" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                      name="LocationID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      name="ProductID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                      name="OrderDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[ProductQty]"
+                      name="ProductQty"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[TotalSale]"
+                      name="TotalSale"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input].ExternalColumns[TotalTax]"
+                      name="TotalTax"
+                      dataType="cy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Create Local Sales Data\Local Sale Fact.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Local Sales Data\Local Sale Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Local Sale Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Local Sales Data\Local Sale Fact.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Local Sales Data\Location"
+              name="Location"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[Sales].[SalesTerritory]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">0</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Local Sales Data\Location.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[Name]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[Name]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[CountryRegionCode]"
+                      length="3"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[Group]"
+                      name="Group"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[Group]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[Group]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[SalesYTD]"
+                      name="SalesYTD"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[SalesYTD]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[SalesYTD]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[SalesLastYear]"
+                      name="SalesLastYear"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[SalesLastYear]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[SalesLastYear]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[CostYTD]"
+                      name="CostYTD"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[CostYTD]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[CostYTD]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[CostLastYear]"
+                      name="CostLastYear"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[CostLastYear]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[CostLastYear]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      name="rowguid"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[rowguid]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      name="TerritoryID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      name="Name"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      dataType="wstr"
+                      length="3" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[Group]"
+                      name="Group"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[SalesYTD]"
+                      name="SalesYTD"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[SalesLastYear]"
+                      name="SalesLastYear"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[CostYTD]"
+                      name="CostYTD"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[CostLastYear]"
+                      name="CostLastYear"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      name="rowguid"
+                      dataType="guid" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      name="ModifiedDate"
+                      dataType="dbTimeStamp" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      name="CountryRegionCode"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[CountryRegionCode]"
+                      length="3"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[Group]"
+                      name="Group"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[Group]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[SalesYTD]"
+                      name="SalesYTD"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[SalesYTD]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[SalesLastYear]"
+                      name="SalesLastYear"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[SalesLastYear]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[CostYTD]"
+                      name="CostYTD"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[CostYTD]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[CostLastYear]"
+                      name="CostLastYear"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[CostLastYear]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      name="rowguid"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      dataType="guid" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Local Sales Data\Products"
+              name="Products"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[Production].[Product]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">0</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Local Sales Data\Products.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductID]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Name]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Name]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductNumber]"
+                      name="ProductNumber"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductNumber]"
+                      length="25"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductNumber]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[MakeFlag]"
+                      name="MakeFlag"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[MakeFlag]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[MakeFlag]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[FinishedGoodsFlag]"
+                      name="FinishedGoodsFlag"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[FinishedGoodsFlag]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[FinishedGoodsFlag]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Color]"
+                      name="Color"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Color]"
+                      length="15"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Color]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[SafetyStockLevel]"
+                      name="SafetyStockLevel"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[SafetyStockLevel]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[SafetyStockLevel]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ReorderPoint]"
+                      name="ReorderPoint"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ReorderPoint]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ReorderPoint]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[StandardCost]"
+                      name="StandardCost"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[StandardCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[StandardCost]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ListPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ListPrice]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Size]"
+                      name="Size"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Size]"
+                      length="5"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Size]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[SizeUnitMeasureCode]"
+                      name="SizeUnitMeasureCode"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[SizeUnitMeasureCode]"
+                      length="3"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[SizeUnitMeasureCode]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[WeightUnitMeasureCode]"
+                      name="WeightUnitMeasureCode"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[WeightUnitMeasureCode]"
+                      length="3"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[WeightUnitMeasureCode]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Weight]"
+                      name="Weight"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Weight]"
+                      precision="8"
+                      scale="2"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Weight]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[DaysToManufacture]"
+                      name="DaysToManufacture"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[DaysToManufacture]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[DaysToManufacture]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductLine]"
+                      name="ProductLine"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductLine]"
+                      length="2"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Class]"
+                      name="Class"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Class]"
+                      length="2"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Class]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Style]"
+                      name="Style"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[Style]"
+                      length="2"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Style]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductSubcategoryID]"
+                      name="ProductSubcategoryID"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductSubcategoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryID]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductModelID]"
+                      name="ProductModelID"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ProductModelID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductModelID]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[SellStartDate]"
+                      name="SellStartDate"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[SellStartDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[SellStartDate]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[SellEndDate]"
+                      name="SellEndDate"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[SellEndDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[SellEndDate]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[DiscontinuedDate]"
+                      name="DiscontinuedDate"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[DiscontinuedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[DiscontinuedDate]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      name="rowguid"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[rowguid]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      name="ProductID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      name="Name"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductNumber]"
+                      name="ProductNumber"
+                      dataType="wstr"
+                      length="25" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[MakeFlag]"
+                      name="MakeFlag"
+                      dataType="bool" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[FinishedGoodsFlag]"
+                      name="FinishedGoodsFlag"
+                      dataType="bool" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Color]"
+                      name="Color"
+                      dataType="wstr"
+                      length="15" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[SafetyStockLevel]"
+                      name="SafetyStockLevel"
+                      dataType="i2" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ReorderPoint]"
+                      name="ReorderPoint"
+                      dataType="i2" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[StandardCost]"
+                      name="StandardCost"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ListPrice]"
+                      name="ListPrice"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Size]"
+                      name="Size"
+                      dataType="wstr"
+                      length="5" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[SizeUnitMeasureCode]"
+                      name="SizeUnitMeasureCode"
+                      dataType="wstr"
+                      length="3" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[WeightUnitMeasureCode]"
+                      name="WeightUnitMeasureCode"
+                      dataType="wstr"
+                      length="3" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Weight]"
+                      name="Weight"
+                      dataType="numeric"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[DaysToManufacture]"
+                      name="DaysToManufacture"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductLine]"
+                      name="ProductLine"
+                      dataType="wstr"
+                      length="2" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Class]"
+                      name="Class"
+                      dataType="wstr"
+                      length="2" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[Style]"
+                      name="Style"
+                      dataType="wstr"
+                      length="2" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductSubcategoryID]"
+                      name="ProductSubcategoryID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ProductModelID]"
+                      name="ProductModelID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[SellStartDate]"
+                      name="SellStartDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[SellEndDate]"
+                      name="SellEndDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[DiscontinuedDate]"
+                      name="DiscontinuedDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      name="rowguid"
+                      dataType="guid" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      name="ModifiedDate"
+                      dataType="dbTimeStamp" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductNumber]"
+                      name="ProductNumber"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductNumber]"
+                      length="25"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[MakeFlag]"
+                      name="MakeFlag"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[MakeFlag]"
+                      dataType="bool" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[FinishedGoodsFlag]"
+                      name="FinishedGoodsFlag"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[FinishedGoodsFlag]"
+                      dataType="bool" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      name="Color"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Color]"
+                      length="15"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[SafetyStockLevel]"
+                      name="SafetyStockLevel"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[SafetyStockLevel]"
+                      dataType="i2" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ReorderPoint]"
+                      name="ReorderPoint"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ReorderPoint]"
+                      dataType="i2" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[StandardCost]"
+                      name="StandardCost"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[StandardCost]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ListPrice]"
+                      name="ListPrice"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ListPrice]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Size]"
+                      name="Size"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Size]"
+                      length="5"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[SizeUnitMeasureCode]"
+                      name="SizeUnitMeasureCode"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[SizeUnitMeasureCode]"
+                      length="3"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[WeightUnitMeasureCode]"
+                      name="WeightUnitMeasureCode"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[WeightUnitMeasureCode]"
+                      length="3"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      name="Weight"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Weight]"
+                      precision="8"
+                      scale="2"
+                      dataType="numeric" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[DaysToManufacture]"
+                      name="DaysToManufacture"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[DaysToManufacture]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
+                      name="ProductLine"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductLine]"
+                      length="2"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Class]"
+                      name="Class"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Class]"
+                      length="2"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Style]"
+                      name="Style"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[Style]"
+                      length="2"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductSubcategoryID]"
+                      name="ProductSubcategoryID"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductSubcategoryID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductModelID]"
+                      name="ProductModelID"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ProductModelID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[SellStartDate]"
+                      name="SellStartDate"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[SellStartDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[SellEndDate]"
+                      name="SellEndDate"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[SellEndDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[DiscontinuedDate]"
+                      name="DiscontinuedDate"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[DiscontinuedDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      name="rowguid"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      dataType="guid" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Local Sales Data\SalesInformation"
+              name="SalesInformation"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."></property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [OrderDate]
+      ,[TerritoryID]
+	  ,ProductID
+	  ,OrderQty
+      ,[SubTotal]
+      ,[TaxAmt]
+  FROM [COMP3065].[Sales].[SalesOrderHeader] sh
+  JOIN [Sales].[SalesOrderDetail] sd ON sh.SalesOrderID = sd.SalesOrderID</property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">2</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Local Sales Data\SalesInformation.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      name="ProductID"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[ProductID]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[SubTotal]"
+                      name="SubTotal"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[SubTotal]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[SubTotal]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      name="TaxAmt"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[OrderQty]"
+                      name="OrderQty"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].Columns[OrderQty]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[OrderQty]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                      name="OrderDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      name="TerritoryID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      name="ProductID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[SubTotal]"
+                      name="SubTotal"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                      name="TaxAmt"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output].ExternalColumns[OrderQty]"
+                      name="OrderQty"
+                      dataType="i2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      name="ProductID"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[OrderQty]"
+                      name="OrderQty"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[OrderQty]"
+                      dataType="i2" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[SubTotal]"
+                      name="SubTotal"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[SubTotal]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      name="TaxAmt"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Create Local Sales Data.Paths[OLE DB Source Output2]"
+              name="OLE DB Source Output"
+              startId="Package\Create Local Sales Data\Location.Outputs[OLE DB Source Output]"
+              endId="Package\Create Local Sales Data\DIMLocation.Inputs[OLE DB Destination Input]" />
+            <path
+              refId="Package\Create Local Sales Data.Paths[OLE DB Source Output1]"
+              name="OLE DB Source Output"
+              startId="Package\Create Local Sales Data\Products.Outputs[OLE DB Source Output]"
+              endId="Package\Create Local Sales Data\DIMProducts.Inputs[OLE DB Destination Input]" />
+            <path
+              refId="Package\Create Local Sales Data.Paths[OLE DB Source Output]"
+              name="OLE DB Source Output"
+              startId="Package\Create Local Sales Data\SalesInformation.Outputs[OLE DB Source Output]"
+              endId="Package\Create Local Sales Data\Local Sale Fact.Inputs[OLE DB Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Online Sales Data"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Online Sales Data"
+      DTS:DTSID="{5166385A-C43A-46C1-8102-378009444D9E}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Create Online Sales Data\Customer"
+              name="Customer"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[Sales].[Customer]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [CustomerID]
+	  ,p.[FirstName]
+	  ,p.LastName
+
+  FROM [COMP3065].[Sales].[Customer] c
+ JOIN Person.Person p ON c.PersonID = p.BusinessEntityID
+  WHERE PERSONID is Not NULL</property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">2</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Online Sales Data\Customer.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].ExternalColumns[FirstName]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[LastName]"
+                      name="LastName"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[LastName]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].ExternalColumns[LastName]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      name="CustomerID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].ExternalColumns[FirstName]"
+                      name="FirstName"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].ExternalColumns[LastName]"
+                      name="LastName"
+                      dataType="wstr"
+                      length="50" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      name="FirstName"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[FirstName]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      name="LastName"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[LastName]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Online Sales Data\DIM Customer"
+              name="DIM Customer"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[DIMCustomer]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Online Sales Data\DIM Customer.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      cachedName="CustomerID"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].Columns[FirstName]"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[FirstName]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      cachedName="FirstName"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].Columns[LastName]"
+                      lineageId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output].Columns[LastName]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      cachedName="LastName"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      name="CustomerID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                      name="FirstName"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                      name="LastName"
+                      dataType="wstr"
+                      length="50" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Create Online Sales Data\DIM Customer.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\DIM Customer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Online Sales Data\DIM Customer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\DIM Customer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Online Sales Data\DIM Customer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Online Sales Data\DIM Reason"
+              name="DIM Reason"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[DIMReason]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Online Sales Data\DIM Reason.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].Columns[Name]"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[Name]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      cachedName="Name"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].Columns[ReasonType]"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[ReasonType]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].ExternalColumns[ReasonType]"
+                      cachedName="ReasonType"
+                      cachedDataType="wstr"
+                      cachedLength="50" />
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].Columns[SalesReasonID]"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[SalesReasonID]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].ExternalColumns[ReasonID]"
+                      cachedName="SalesReasonID"
+                      cachedDataType="i4" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].ExternalColumns[ReasonID]"
+                      name="ReasonID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      name="Name"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input].ExternalColumns[ReasonType]"
+                      name="ReasonType"
+                      dataType="wstr"
+                      length="50" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Create Online Sales Data\DIM Reason.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\DIM Reason.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Online Sales Data\DIM Reason.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\DIM Reason.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Online Sales Data\DIM Reason.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Online Sales Data\Reason"
+              name="Reason"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[Sales].[SalesReason]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">0</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Online Sales Data\Reason.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[SalesReasonID]"
+                      name="SalesReasonID"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[SalesReasonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].ExternalColumns[SalesReasonID]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[Name]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].ExternalColumns[Name]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[ReasonType]"
+                      name="ReasonType"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[ReasonType]"
+                      length="50"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].ExternalColumns[ReasonType]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].ExternalColumns[SalesReasonID]"
+                      name="SalesReasonID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      name="Name"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].ExternalColumns[ReasonType]"
+                      name="ReasonType"
+                      dataType="wstr"
+                      length="50" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      name="ModifiedDate"
+                      dataType="dbTimeStamp" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[SalesReasonID]"
+                      name="SalesReasonID"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[SalesReasonID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[ReasonType]"
+                      name="ReasonType"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[ReasonType]"
+                      length="50"
+                      dataType="wstr" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Online Sales Data\Sales Data"
+              name="Sales Data"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."></property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT a.OrderDate, a.CustomerID,  a.SubTotal, a.TaxAmt, r.SalesReasonID, a.Freight
+FROM     Sales.SalesOrderHeader AS a INNER JOIN
+                  Sales.SalesOrderHeaderSalesReason AS r ON a.SalesOrderID = r.SalesOrderID
+WHERE  (a.OnlineOrderFlag = 1)</property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">2</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Online Sales Data\Sales Data.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[SubTotal]"
+                      name="SubTotal"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[SubTotal]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[SubTotal]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      name="TaxAmt"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[SalesReasonID]"
+                      name="SalesReasonID"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[SalesReasonID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[SalesReasonID]" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[Freight]"
+                      name="Freight"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[Freight]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[Freight]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[OrderDate]"
+                      name="OrderDate"
+                      dataType="dbTimeStamp" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[CustomerID]"
+                      name="CustomerID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[SubTotal]"
+                      name="SubTotal"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[TaxAmt]"
+                      name="TaxAmt"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[SalesReasonID]"
+                      name="SalesReasonID"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].ExternalColumns[Freight]"
+                      name="Freight"
+                      dataType="cy" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      name="OrderDate"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[OrderDate]"
+                      dataType="dbTimeStamp" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      name="CustomerID"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[CustomerID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[SubTotal]"
+                      name="SubTotal"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[SubTotal]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      name="TaxAmt"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[TaxAmt]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[SalesReasonID]"
+                      name="SalesReasonID"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[SalesReasonID]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                      name="Freight"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[Freight]"
+                      dataType="cy" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Create Online Sales Data\SalesFact"
+              name="SalesFact"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[OnlineSalesFact]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">932</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Create Online Sales Data\SalesFact.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-Q2V8SA7.COMP3065_SalesDM]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].Columns[CustomerID]"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[CustomerID]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                      cachedName="CustomerID"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].Columns[SalesReasonID]"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[SalesReasonID]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[ReasonId]"
+                      cachedName="SalesReasonID"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].Columns[SubTotal]"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[SubTotal]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[TotalSales]"
+                      cachedName="SubTotal"
+                      cachedDataType="cy" />
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].Columns[TaxAmt]"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[TaxAmt]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[TotalTax]"
+                      cachedName="TaxAmt"
+                      cachedDataType="cy" />
+                    <inputColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].Columns[Freight]"
+                      lineageId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output].Columns[Freight]"
+                      externalMetadataColumnId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[TotalFreight]"
+                      cachedName="Freight"
+                      cachedDataType="cy" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                      name="CustomerId"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[ReasonId]"
+                      name="ReasonId"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[TotalSales]"
+                      name="TotalSales"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[TotalTax]"
+                      name="TotalTax"
+                      dataType="cy" />
+                    <externalMetadataColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input].ExternalColumns[TotalFreight]"
+                      name="TotalFreight"
+                      dataType="cy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Create Online Sales Data\SalesFact.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Create Online Sales Data\SalesFact.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Create Online Sales Data\SalesFact.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Create Online Sales Data\SalesFact.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Create Online Sales Data.Paths[OLE DB Source Output2]"
+              name="OLE DB Source Output"
+              startId="Package\Create Online Sales Data\Reason.Outputs[OLE DB Source Output]"
+              endId="Package\Create Online Sales Data\DIM Reason.Inputs[OLE DB Destination Input]" />
+            <path
+              refId="Package\Create Online Sales Data.Paths[OLE DB Source Output1]"
+              name="OLE DB Source Output"
+              startId="Package\Create Online Sales Data\Sales Data.Outputs[OLE DB Source Output]"
+              endId="Package\Create Online Sales Data\SalesFact.Inputs[OLE DB Destination Input]" />
+            <path
+              refId="Package\Create Online Sales Data.Paths[OLE DB Source Output]"
+              name="OLE DB Source Output"
+              startId="Package\Create Online Sales Data\Customer.Outputs[OLE DB Source Output]"
+              endId="Package\Create Online Sales Data\DIM Customer.Inputs[OLE DB Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Create Online Sales Data"
+      DTS:To="Package\Create Local Sales Data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{7D733B10-3CE2-4666-A330-4A813307DF74}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Create Online Sales Data"
+          TopLeft="137.485716640706,81.1764717379243" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Create Local Sales Data"
+          TopLeft="323.771434098847,193.129414484493" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="235.085716640706,122.776471737924">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183.085717458141,70.3529427465683"
+              Start="0,0"
+              End="183.085717458141,62.8529427465683">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.1764713732842" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.1764713732842"
+                    Point2="0,35.1764713732842"
+                    Point3="4,35.1764713732842" />
+                  <mssgle:LineSegment
+                    End="179.085717458141,35.1764713732842" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179.085717458141,35.1764713732842"
+                    Point2="183.085717458141,35.1764713732842"
+                    Point3="183.085717458141,39.1764713732842" />
+                  <mssgle:LineSegment
+                    End="183.085717458141,62.8529427465683" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Create Online Sales Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="128,41.6"
+          Id="Package\Create Online Sales Data\Sales Data"
+          TopLeft="196.34286050018,138.682354897364" />
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\Create Online Sales Data\SalesFact"
+          TopLeft="195.453971596153,259.471899075052" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Create Online Sales Data\Customer"
+          TopLeft="17.4857145971182,136.988237035811" />
+        <NodeLayout
+          Size="112,41.6"
+          Id="Package\Create Online Sales Data\Reason"
+          TopLeft="365.866672910963,137.735949464598" />
+        <NodeLayout
+          Size="145.6,41.6"
+          Id="Package\Create Online Sales Data\DIM Customer"
+          TopLeft="7.20000013623918,256.988238640228" />
+        <NodeLayout
+          Size="134.4,41.6"
+          Id="Package\Create Online Sales Data\DIM Reason"
+          TopLeft="359.200006130764,257.260134068877" />
+        <EdgeLayout
+          Id="Package\Create Online Sales Data.Paths[OLE DB Source Output2]"
+          TopLeft="424.133339520863,179.335949464598">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.9241846042795"
+              Start="0,0"
+              End="0,70.4241846042795">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.4241846042795" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,27.2120923021398,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Create Online Sales Data.Paths[OLE DB Source Output1]"
+          TopLeft="260.498416048167,180.282354897364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79.1895441776878"
+              Start="0,0"
+              End="0,71.6895441776878">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.6895441776878" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,27.8447720888439,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Create Online Sales Data.Paths[OLE DB Source Output]"
+          TopLeft="79.5428573666787,178.588237035811">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78.4000016044168"
+              Start="0,0"
+              End="0,70.9000016044168">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.9000016044168" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,27.4500008022084,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Create Local Sales Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Create Local Sales Data\SalesInformation"
+          TopLeft="105.6,52.8" />
+        <NodeLayout
+          Size="118.4,41.6"
+          Id="Package\Create Local Sales Data\Products"
+          TopLeft="344,48" />
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Create Local Sales Data\Location"
+          TopLeft="564,48.8" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Create Local Sales Data\Local Sale Fact"
+          TopLeft="108,201.6" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Create Local Sales Data\DIMProducts"
+          TopLeft="342.4,200" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Create Local Sales Data\DIMLocation"
+          TopLeft="556.8,195.2" />
+        <EdgeLayout
+          Id="Package\Create Local Sales Data.Paths[OLE DB Source Output2]"
+          TopLeft="627.8,90.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,104.8"
+              Start="0,0"
+              End="0,97.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,97.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Create Local Sales Data.Paths[OLE DB Source Output1]"
+          TopLeft="407.2,89.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,110.4"
+              Start="0,0"
+              End="0,102.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,102.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Create Local Sales Data.Paths[OLE DB Source Output]"
+          TopLeft="183.2,94.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,107.2"
+              Start="0,0"
+              End="0,99.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,99.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Online Sales Data\Sales Data">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Online Sales Data\SalesFact">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Online Sales Data\Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Online Sales Data\Reason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Online Sales Data\DIM Customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Online Sales Data\DIM Reason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Local Sales Data\SalesInformation">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Local Sales Data\Products">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Local Sales Data\Location">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Local Sales Data\Local Sale Fact">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Local Sales Data\DIMProducts">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Create Local Sales Data\DIMLocation">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
